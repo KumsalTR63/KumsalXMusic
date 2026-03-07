@@ -7,13 +7,13 @@ from pyrogram import types
 from KumsalTR import app, config, lang
 from KumsalTR.core.lang import lang_codes
 
+
 class Inline:
     def __init__(self):
         self.ikm = types.InlineKeyboardMarkup
         self.ikb = types.InlineKeyboardButton
 
     def cancel_dl(self, text) -> types.InlineKeyboardMarkup:
-        # İndirme iptal butonu
         return self.ikm([[self.ikb(text="❌ İᴘᴛᴀʟ 𝐄ᴛ", callback_data=f"cancel_dl")]])
 
     def controls(
@@ -34,16 +34,14 @@ class Inline:
             )
 
         if not remove:
-            # 1. Satır: Gruba Ekleme Butonu
             keyboard.append(
                 [
                     self.ikb(
-                        text="✙ 𝐁єηі 𝐆ʀσυвυηα 𝐄ᴋʟє ✙", 
+                        text="✙ 𝐁єηі 𝐆ʀσυвυηα 𝐄ᴋʟє ✙",
                         url=f"https://t.me/{app.username}?startgroup=true"
                     )
                 ]
             )
-            # 2. Satır: Destek ve Kapat Butonları
             keyboard.append(
                 [
                     self.ikb(text="˹ 𝐃єѕᴛєᴋ ˼", url="https://t.me/kumsalbots"),
@@ -63,22 +61,19 @@ class Inline:
                 ]
             ]
         else:
-            # Mevcut kategoriler + Etiket ve Eğlence eklendi
             cbs = [
-                "admins", "auth", "blist", 
-                "lang", "ping", "play", 
+                "admins", "auth", "blist",
+                "lang", "ping", "play",
                 "queue", "stats", "sudo",
                 "etiket", "eglence"
             ]
-            
+
             buttons = []
             for cb in cbs:
-                # Dil dosyasından (tr.py vb.) metni çeker, yoksa baş harfi büyük yazar
                 text = _lang.get(f"help_{cb}", cb.capitalize())
                 buttons.append(self.ikb(text=text, callback_data=f"help {cb}"))
-            
-            # Butonları 3'lü sıralar halinde otomatik olarak dizer
-            rows = [buttons[i : i + 3] for i in range(0, len(buttons), 3)]
+
+            rows = [buttons[i:i+3] for i in range(0, len(buttons), 3)]
 
         return self.ikm(rows)
 
@@ -92,7 +87,7 @@ class Inline:
             )
             for code, name in langs.items()
         ]
-        rows = [buttons[i : i + 2] for i in range(0, len(buttons), 2)]
+        rows = [buttons[i:i+2] for i in range(0, len(buttons), 2)]
         return self.ikm(rows)
 
     def ping_markup(self, text: str) -> types.InlineKeyboardMarkup:
@@ -105,7 +100,8 @@ class Inline:
             [
                 [
                     self.ikb(
-                        text="⚡ 𝐒̧ɪᴍᴅɪ 𝐏ᴀᴛʟᴀᴛ", callback_data=f"controls force {chat_id} {item_id}"
+                        text="⚡ 𝐒̧ɪᴍᴅɪ 𝐏ᴀᴛʟᴀᴛ",
+                        callback_data=f"controls force {chat_id} {item_id}"
                     )
                 ]
             ]
@@ -139,34 +135,42 @@ class Inline:
             ]
         )
 
+    # 🔥 START MENÜ (BUTONLAR YAN YANA)
     def start_key(
         self, lang: dict, private: bool = False
     ) -> types.InlineKeyboardMarkup:
+
         rows = [
             [
                 self.ikb(
                     text="✙ 𝐁єηі 𝐆ʀσυвυηα 𝐄ᴋʟє ✙",
                     url=f"https://t.me/{app.username}?startgroup=true",
-                )
+                ),
+                self.ikb(text="˹ 𝐘ᴀʀᴅıᴍ ˼", callback_data="help"),
             ],
-            [self.ikb(text="˹ 𝐘ᴀʀᴅıᴍ ᴠє 𝐊ᴏᴍυᴛʟᴀʀ ˼", callback_data="help")],
             [
                 self.ikb(text="˹ 𝐃єѕᴛєᴋ ˼", url=config.SUPPORT_CHAT),
                 self.ikb(text="˹ 𝐆ϋηᴄєʟʟєᴍєʟєʀ ˼", url=config.SUPPORT_CHANNEL),
             ],
         ]
+
         if private:
-            rows += [
+            rows.append(
                 [
                     self.ikb(text="˹ 𝐒ᴀʜіʙі ˼", user_id=config.OWNER_ID),
                     self.ikb(
                         text="˹ 𝐊ᴀηᴀʟ ˼",
                         url="https://t.me/kaygisizlarsohbet",
-                    )
+                    ),
                 ]
-            ]
+            )
         else:
-            rows += [[self.ikb(text="🌐 𝐃іʟ", callback_data="language")]]
+            rows.append(
+                [
+                    self.ikb(text="🌐 𝐃іʟ", callback_data="language")
+                ]
+            )
+
         return self.ikm(rows)
 
     def yt_key(self, link: str) -> types.InlineKeyboardMarkup:
