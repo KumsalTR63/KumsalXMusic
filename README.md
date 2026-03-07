@@ -3,7 +3,7 @@
 </h2>
 
 <p align="center">
-  <img src="https://ibb.co/v6jbg6ZL">
+  <img src="https://files.catbox.moe/4qasc4.jpeg" width="700">
 </p>
 
 <p align="center">
@@ -14,12 +14,27 @@
 <a href="https://github.com/KumsalTR63/KumsalXMusic/commits/main"><img src="https://img.shields.io/github/last-commit/KumsalTR63/KumsalXMusic?color=blue&logo=github&logoColor=green&style=for-the-badge" /></a>
 </p>
 
-<p align="center">
-  <img src="https://ibb.co/v6jbg6ZL">
-</p>
+---
 
 <h3 align="center">
-    ─「 ʜᴇʀᴏᴋᴜ'ᴅᴀ ᴋᴜʀ 」─
+    ─「 ⭐ ÖZELLİKLER 」─
+</h3>
+
+- 🎵 **Yüksek Kalite Müzik Yayını**
+- 📺 **Video Müzik Oynatma**
+- 🔎 **YouTube Arama**
+- 📑 **Akıllı Müzik Kuyruğu**
+- ⏸ **Duraklat / Devam**
+- ⏭ **Şarkı Atlama**
+- 🎧 **7/24 Çalışma**
+- ⚡ **Hızlı ve Stabil**
+- 🛠 **Admin Kontrol Sistemi**
+- 🌐 **Çoklu Dil Desteği**
+
+---
+
+<h3 align="center">
+    ─「 🚀 HEROKU'DA KUR 」─
 </h3>
 
 <p align="center">
@@ -28,8 +43,10 @@
 </a>
 </p>
 
+---
+
 <h3 align="center">
-    ─「 ᴋᴏᴍᴜᴛʟᴀʀ / ʏᴀʀᴅıᴍ 」─
+    ─「 📜 KOMUTLAR / YARDIM 」─
 </h3>
 
 ### 🎵 Müzik Komutları
@@ -65,7 +82,7 @@
 ━━━━━━━━━━━━━━━━━━━━
 
 <h3 align="center">
-    ─「 ᴛᴇʟᴇɢʀᴀᴍ 」─
+    ─「 📡 TELEGRAM 」─
 </h3>
 
 <p align="center">
@@ -82,4 +99,10 @@
 <img src="https://img.shields.io/badge/Owner-black?style=for-the-badge&logo=telegram&logoColor=white">
 </a>
 
+</p>
+
+---
+
+<p align="center">
+✨ KumsalTR Team tarafından geliştirildi ✨
 </p>
