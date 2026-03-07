@@ -1,8 +1,7 @@
 # @The_Team_kumsal tarafından yasal olarak geliştirildi keyifli kullanımlar #kumsalteam
-# Copyright (c) 2025 TheHamkerAlone 
+# Copyright (c) 2025 TheHamkerAlone
 # Licensed under the MIT License.
 # This file is part of KumsalTR
-
 
 import pyrogram
 
@@ -20,37 +19,66 @@ class Bot(pyrogram.Client):
             max_concurrent_transmissions=7,
             link_preview_options=pyrogram.types.LinkPreviewOptions(is_disabled=True),
         )
+
+        # 👑 Bot sahibi
         self.owner = config.OWNER_ID
+
+        # 📜 Log grubu
         self.logger = config.LOGGER_ID
+
+        # 🚫 Banlı kullanıcı filtresi
         self.bl_users = pyrogram.filters.user()
+
+        # 🛠 Sudo filtresi
         self.sudoers = pyrogram.filters.user(self.owner)
 
     async def boot(self):
         """
-        Starts the bot and performs initial setup.
-
-        Raises:
-            SystemExit: If the bot fails to access the log group or is not an administrator in the logger group.
+        Botu başlatır ve ilk kontrolleri yapar.
         """
+
         await super().start()
+
         self.id = self.me.id
         self.name = self.me.first_name
         self.username = self.me.username
         self.mention = self.me.mention
 
         try:
-            await self.send_message(self.logger, "Bot Started")
+            await self.send_message(
+                self.logger,
+                "✨ <b>Kumsal Music Bot Başlatıldı</b>\n\n"
+                "⚡ Sistem Aktif\n"
+                "🎧 Müzik Motoru Hazır\n"
+                "🚀 Bot başarıyla çalışıyor."
+            )
+
             get = await self.get_chat_member(self.logger, self.id)
+
         except Exception as ex:
-            raise SystemExit(f"Bot has failed to access the log group: {self.logger}\nReason: {ex}")
+            raise SystemExit(
+                f"""
+❌ LOG GRUBUNA ERİŞİM HATASI
+
+Bot log grubuna erişemedi.
+
+LOG ID: {self.logger}
+Hata: {ex}
+"""
+            )
 
         if get.status != pyrogram.enums.ChatMemberStatus.ADMINISTRATOR:
-            raise SystemExit("Please promote the bot as an admin in logger group.")
-        logger.info(f"Bot started as @{self.username}")
+            raise SystemExit(
+                "❌ Bot log grubunda ADMIN olmalıdır."
+            )
+
+        logger.info(f"✨ Kumsal Bot başlatıldı → @{self.username}")
 
     async def exit(self):
         """
-        Asynchronously stops the bot.
+        Botu güvenli şekilde kapatır.
         """
+
         await super().stop()
-        logger.info("Bot stopped.")
+
+        logger.info("⛔ Kumsal Bot durduruldu.")
