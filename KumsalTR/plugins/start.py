@@ -23,6 +23,7 @@ async def _help(_, m: types.Message):
 @app.on_message(filters.command(["start"]))
 @lang.language()
 async def start(_, message: types.Message):
+
     if message.from_user.id in app.bl_users and message.from_user.id not in db.notified:
         return await message.reply_text(message.lang["bl_user_notify"])
 
@@ -30,6 +31,7 @@ async def start(_, message: types.Message):
         return await _help(_, message)
 
     private = message.chat.type == enums.ChatType.PRIVATE
+
     _text = (
         message.lang["start_pm"].format(message.from_user.first_name, app.name)
         if private
@@ -37,9 +39,9 @@ async def start(_, message: types.Message):
     )
 
     key = buttons.start_key(message.lang, private)
-    await message.reply_photo(
-        photo=config.START_IMG,
-        caption=_text,
+
+    await message.reply_text(
+        text=_text,
         reply_markup=key,
         quote=not private,
     )
@@ -49,6 +51,7 @@ async def start(_, message: types.Message):
             return
         await utils.send_log(message)
         await db.add_user(message.from_user.id)
+
     else:
         if await db.is_chat(message.chat.id):
             return
@@ -59,9 +62,11 @@ async def start(_, message: types.Message):
 @app.on_message(filters.command(["playmode", "settings"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 async def settings(_, message: types.Message):
+
     admin_only = await db.get_play_mode(message.chat.id)
     cmd_delete = await db.get_cmd_delete(message.chat.id)
     _language = await db.get_lang(message.chat.id)
+
     await message.reply_text(
         text=message.lang["start_settings"].format(message.chat.title),
         reply_markup=buttons.settings_markup(
@@ -74,10 +79,12 @@ async def settings(_, message: types.Message):
 @app.on_message(filters.new_chat_members, group=7)
 @lang.language()
 async def _new_member(_, message: types.Message):
+
     if message.chat.type != enums.ChatType.SUPERGROUP:
         return await message.chat.leave()
 
     await asyncio.sleep(3)
+
     for member in message.new_chat_members:
         if member.id == app.id:
             if await db.is_chat(message.chat.id):
