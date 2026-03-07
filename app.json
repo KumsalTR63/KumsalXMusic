@@ -1,43 +1,60 @@
-<p align="center">
-<img src="https://resmim.net/cdn/2026/03/07/wvHiSZ.jpg" width="700">
-</p>
-    "keywords": ["python3", "telegram", "bot", "music-bot"],
-    "stack": "container",
-    "env": {
-        "API_ID": {
-            "description": "ʙᴜʀᴅᴀɴ ᴀʟɪɴ https://my.telegram.org",
-            "value": "",
-            "required": true
-        },
-        "API_HASH": {
-            "description": "ʙᴜʀᴅᴀɴ ᴀʟɪɴ https://my.telegram.org",
-            "value": "",
-            "required": true
-        },
-        "BOT_TOKEN": {
-            "description": "ʙᴏᴛ ᴛᴏᴋᴇɴɪ ᴇᴋʟᴇʏɪɴ",
-            "value": "",
-            "required": true
-        },
-        "MONGO_URL": {
-            "description": "ʙᴜʀᴅᴀɴ ᴀʟɪɴ https://cloud.mongodb.com.",
-            "value": "",
-            "required": true
-        },
-        "LOGGER_ID": {
-            "description": "ʟᴏɢ ɢʀᴜʙᴜ ɪᴅ.",
-            "value": "",
-            "required": true
-        },
-        "OWNER_ID": {
-            "description": "sᴀʜɪᴘ ɪᴅ.",
-            "value": "",
-            "required": true
-        },
-        "SESSION": {
-            "description": "sᴇsɪᴏɴ ᴇᴋʟᴇʏɪɴ.",
-            "value": "",
-            "required": true
-        }
+{
+  "name": "Kumsal X Timi",
+  "description": "🎧 Telegram Grupları İçin Güçlü Müzik Botu",
+  "logo": "https://resmim.net/cdn/2026/03/07/wvHiSZ.jpg",
+  "keywords": [
+    "python3",
+    "telegram",
+    "bot",
+    "music-bot",
+    "telegram-music",
+    "kumsal-music"
+  ],
+  "stack": "container",
+
+  "env": {
+
+    "API_ID": {
+      "description": "📌 Telegram API ID alın → https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+
+    "API_HASH": {
+      "description": "📌 Telegram API HASH alın → https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+
+    "BOT_TOKEN": {
+      "description": "🤖 BotFather'dan aldığınız bot token",
+      "value": "",
+      "required": true
+    },
+
+    "MONGO_URL": {
+      "description": "🍃 MongoDB bağlantı linki → https://cloud.mongodb.com",
+      "value": "",
+      "required": true
+    },
+
+    "LOGGER_ID": {
+      "description": "📜 Bot loglarının gönderileceği grup ID",
+      "value": "",
+      "required": true
+    },
+
+    "OWNER_ID": {
+      "description": "👑 Bot sahibinin Telegram ID",
+      "value": "",
+      "required": true
+    },
+
+    "SESSION": {
+      "description": "🎧 Pyrogram session string",
+      "value": "",
+      "required": true
     }
+
+  }
 }
