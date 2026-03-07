@@ -3,7 +3,7 @@
 </h2>
 
 <p align="center">
-  <img src="https://files.catbox.moe/521eya.jpg">
+  <img src="https://files.catbox.moe/60egfz.jpg">
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://files.catbox.moe/521eya.jpg">
+  <img src="https://files.catbox.moe/60egfz.jpg">
 </p>
 
 <h3 align="center">
