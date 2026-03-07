@@ -63,18 +63,10 @@ class Inline:
         else:
 
             cbs = [
-                "admins",
-                "auth",
-                "blist",
-                "lang",
-                "ping",
-                "play",
-                "queue",
-                "stats",
-                "sudo",
-                "etiket",
-                "eglence",
-            
+                "admins", "auth", "blist", 
+                "lang", "ping", "play", 
+                "queue", "stats", "sudo",
+                "etiket", "eglence"
             ]
             buttons = []
 
