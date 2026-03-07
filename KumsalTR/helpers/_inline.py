@@ -63,19 +63,19 @@ class Inline:
         else:
 
             cbs = [
-                "👤 ʏᴏɴᴇᴛɪᴄɪ",
-                "🔑 ʏᴇᴛᴋɪ",
-                "🚫 ᴇɴɢᴇʟ",
-                "🌐 ᴅɪʟ",
-                "🚀 ᴘɪɴɢ",
-                "🎵 ᴏʏɴᴀᴛ",
-                "📜 ᴋᴜʏʀᴜᴋ",
-                "📊 sᴛᴀᴛs",
-                "👑 sᴜᴅᴏ",
-                "🏷 ᴇᴛɪᴋᴇᴛ",
-                "🎮 ᴇɢ̆ʟᴇɴᴄᴇ",
+                "admins",
+                "auth",
+                "blist",
+                "lang",
+                "ping",
+                "play",
+                "queue",
+                "stats",
+                "sudo",
+                "etiket",
+                "eglence",
+            
             ]
-
             buttons = []
 
             for cb in cbs:
