@@ -3,7 +3,6 @@
 # Licensed under the MIT License.
 # This file is part of KumsalTR
 
-
 from pyrogram import Client
 
 from KumsalTR import config, logger
@@ -12,16 +11,22 @@ from KumsalTR import config, logger
 class Userbot(Client):
     def __init__(self):
         """
-        Initializes the userbot with multiple clients.
-
-        This method sets up clients for the userbot using predefined session strings.
-        Each client is assigned a unique name based on the key in the `clients` dictionary.
+        Asistan userbotları başlatır.
+        Birden fazla yardımcı hesap çalıştırmak için kullanılır.
         """
+
         self.clients = []
-        clients = {"one": "SESSION1", "two": "SESSION2", "three": "SESSION3"}
+
+        clients = {
+            "one": "SESSION1",
+            "two": "SESSION2",
+            "three": "SESSION3"
+        }
+
         for key, string_key in clients.items():
             name = f"KumsalTRUB{key[-1]}"
             session = getattr(config, string_key)
+
             setattr(
                 self,
                 key,
@@ -35,55 +40,67 @@ class Userbot(Client):
 
     async def boot_client(self, num: int, ub: Client):
         """
-        Boot a client and perform initial setup.
-        Args:
-            num (int): The client number to boot (1, 2, or 3).
-            ub (Client): The userbot client instance.
-        Raises:
-            SystemExit: If the client fails to send a message in the log group.
+        Asistanı başlatır ve ilk ayarları yapar.
         """
+
         clients = {
             1: self.one,
             2: self.two,
             3: self.three,
         }
+
         client = clients[num]
+
         await client.start()
+
         try:
-            await client.send_message(config.LOGGER_ID, "Assistant Started")
+            await client.send_message(config.LOGGER_ID, "✅ Asistan Başlatıldı")
         except:
-            raise SystemExit(f"Assistant {num} failed to send message in log group.")
+            raise SystemExit(
+                f"Asistan {num} log grubuna mesaj gönderemedi."
+            )
 
         client.id = ub.me.id
         client.name = ub.me.first_name
         client.username = ub.me.username
         client.mention = ub.me.mention
+
         self.clients.append(client)
+
+        # BOT BAŞLAYINCA DESTEK KANALINA KATILIR
         try:
-            await ub.join_chat("KumsalTR")
+            await client.join_chat("The_Team_Kumsal")
         except:
             pass
-        logger.info(f"Assistant {num} started as @{client.username}")
+
+        logger.info(f"Asistan {num} başarıyla başlatıldı → @{client.username}")
 
     async def boot(self):
         """
-        Asynchronously starts the assistants.
+        Asistanları başlatır.
         """
+
         if config.SESSION1:
             await self.boot_client(1, self.one)
+
         if config.SESSION2:
             await self.boot_client(2, self.two)
+
         if config.SESSION3:
             await self.boot_client(3, self.three)
 
     async def exit(self):
         """
-        Asynchronously stops the assistants.
+        Asistanları kapatır.
         """
+
         if config.SESSION1:
             await self.one.stop()
+
         if config.SESSION2:
             await self.two.stop()
+
         if config.SESSION3:
             await self.three.stop()
-        logger.info("Assistants stopped.")
+
+        logger.info("⛔ Asistanlar durduruldu.")
