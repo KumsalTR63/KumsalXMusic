@@ -160,7 +160,7 @@ class Inline:
                     self.ikb(text="sᴀʜɪᴘ ˼", user_id=config.OWNER_ID),
                     self.ikb(
                         text="˹ ᴋᴀʏɴᴀᴋ ᴋᴏᴅ ˼",
-                        url="https://t.me/kaygisizlarsohbet",
+                        url="https://github.com/KumsalTR63/KumsalXMusic",
                     ),
                 ]
             )
