@@ -173,7 +173,7 @@ class Inline:
             rows.append(
                 [
                     self.ikb(text="👑 sᴀʜɪʙɪ", user_id=config.OWNER_ID),
-                    self.ikb(text="📡 ᴋᴀʏɴᴀᴋ ᴋᴏᴅ", url="https://t.me/kaygisizlarsohbet"),
+                    self.ikb(text="📡 ᴋᴀʏɴᴀᴋ ᴋᴏᴅ", url="https://t.me/"),
                 ]
             )
 
