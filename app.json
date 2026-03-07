@@ -1,7 +1,6 @@
-{
-    "name": "˹𝙆𝙪𝙢𝙨𝙖𝙡 ✗ 𝙈𝙪𝙨𝙞𝙘 ♪˼",
-    "description": "sᴜᴘᴇʀ ʜɪᴢʟɪ ᴍᴜᴢɪᴋ ʙᴏᴛᴜ.",
-    "logo": "https://files.catbox.moe/521eya.jpg",
+<p align="center">
+<img src="https://resmim.net/cdn/2026/03/07/wvHiSZ.jpg" width="700">
+</p>
     "keywords": ["python3", "telegram", "bot", "music-bot"],
     "stack": "container",
     "env": {
