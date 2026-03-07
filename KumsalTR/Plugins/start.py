@@ -10,7 +10,7 @@ from KumsalTR import app, config, db, lang
 from KumsalTR.helpers import buttons, utils
 
 
-@app.on_message(filters.command(["help"]) & filters.private & ~app.bl_users)
+@app.on_message(filters.command(["help"]) & filters.private & ~app.blacklist_filter)
 @lang.language()
 async def _help(_, m: types.Message):
     await m.reply_text(
@@ -56,7 +56,7 @@ async def start(_, message: types.Message):
         await db.add_chat(message.chat.id)
 
 
-@app.on_message(filters.command(["playmode", "settings"]) & filters.group & ~app.bl_users)
+@app.on_message(filters.command(["playmode", "settings"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 async def settings(_, message: types.Message):
     admin_only = await db.get_play_mode(message.chat.id)

@@ -14,7 +14,7 @@ from KumsalTR import app, db, lang
 
 broadcasting = False
 
-@app.on_message(filters.command(["duyuru"]) & app.sudoers)
+@app.on_message(filters.command(["duyuru"]) & app.sudo_filter)
 @lang.language()
 async def _broadcast(_, message: types.Message):
     global broadcasting
@@ -84,7 +84,7 @@ async def _broadcast(_, message: types.Message):
     await sent.edit_text(text)
 
 
-@app.on_message(filters.command(["stop_gcast", "stop_broadcast"]) & app.sudoers)
+@app.on_message(filters.command(["stop_gcast", "stop_broadcast"]) & app.sudo_filter)
 @lang.language()
 async def _stop_gcast(_, message: types.Message):
     global broadcasting

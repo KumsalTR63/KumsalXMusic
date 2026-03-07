@@ -10,7 +10,7 @@ from KumsalTR import anon, app, db, lang, queue
 from KumsalTR.helpers import can_manage_vc
 
 
-@app.on_message(filters.command(["ilerisar", "gerisar"]) & filters.group & ~app.bl_users)
+@app.on_message(filters.command(["ilerisar", "gerisar"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 @can_manage_vc
 async def _seek(_, m: types.Message):

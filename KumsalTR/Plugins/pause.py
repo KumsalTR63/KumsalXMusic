@@ -10,7 +10,7 @@ from KumsalTR import anon, app, db, lang
 from KumsalTR.helpers import buttons, can_manage_vc
 
 
-@app.on_message(filters.command(["duruklat"]) & filters.group & ~app.bl_users)
+@app.on_message(filters.command(["duruklat"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 @can_manage_vc
 async def _pause(_, m: types.Message):

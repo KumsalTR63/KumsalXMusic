@@ -16,7 +16,7 @@ from KumsalTR import app, config, db, lang, userbot
 from KumsalTR.plugins import all_modules
 
 
-@app.on_message(filters.command(["stats"]) & filters.group & ~app.bl_users)
+@app.on_message(filters.command(["stats"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 async def _stats(_, m: types.Message):
     sent = await m.reply_photo(

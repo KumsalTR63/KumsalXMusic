@@ -11,7 +11,7 @@ from KumsalTR import app
 from KumsalTR.helpers import buttons
 
 
-@app.on_inline_query(~app.bl_users)
+@app.on_inline_query(~app.blacklist_filter)
 async def inline_query_handler(_, query: types.InlineQuery):
     text = query.query.strip().lower()
     if not text:

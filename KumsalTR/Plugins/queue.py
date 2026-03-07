@@ -10,7 +10,7 @@ from KumsalTR import app, config, db, lang, queue
 from KumsalTR.helpers import Track, buttons, thumb
 
 
-@app.on_message(filters.command(["karistir", "playing"]) & filters.group & ~app.bl_users)
+@app.on_message(filters.command(["karistir", "playing"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 async def _queue_func(_, m: types.Message):
     if not await db.get_call(m.chat.id):

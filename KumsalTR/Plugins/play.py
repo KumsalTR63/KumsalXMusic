@@ -24,7 +24,7 @@ def playlist_to_queue(chat_id: int, tracks: list) -> str:
 @app.on_message(
     filters.command(["oynat", "playforce", "voynat", "vplayforce"])
     & filters.group
-    & ~app.bl_users
+    & ~app.blacklist_filter
 )
 @lang.language()
 @checkUB

@@ -11,7 +11,7 @@ from pyrogram import filters, types
 from KumsalTR import app, db, lang, queue
 
 
-@app.on_message(filters.command(["ac", "activevc"]) & app.sudoers)
+@app.on_message(filters.command(["ac", "activevc"]) & app.sudo_filter)
 @lang.language()
 async def _activevc(_, m: types.Message):
     if not db.active_calls:

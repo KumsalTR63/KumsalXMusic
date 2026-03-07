@@ -10,7 +10,7 @@ from KumsalTR import anon, app, db, lang
 from KumsalTR.helpers import can_manage_vc
 
 
-@app.on_message(filters.command(["atla", "next"]) & filters.group & ~app.bl_users)
+@app.on_message(filters.command(["atla", "next"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 @can_manage_vc
 async def _skip(_, m: types.Message):

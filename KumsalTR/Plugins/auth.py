@@ -12,7 +12,7 @@ from KumsalTR import app, db, lang
 from KumsalTR.helpers import admin_check, is_admin, utils
 
 
-@app.on_message(filters.command(["yetkiver", "yetkial"]) & filters.group & ~app.bl_users)
+@app.on_message(filters.command(["yetkiver", "yetkial"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 @admin_check
 async def _auth(_, m: types.Message):
@@ -33,7 +33,7 @@ async def _auth(_, m: types.Message):
 
 rel_hist = {}
 
-@app.on_message(filters.command(["admincache", "reload"]) & filters.group & ~app.bl_users)
+@app.on_message(filters.command(["admincache", "reload"]) & filters.group & ~app.blacklist_filter)
 @lang.language()
 async def _admincache(_, m: types.Message):
     if m.from_user.id in rel_hist:

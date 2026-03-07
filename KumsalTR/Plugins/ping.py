@@ -12,7 +12,7 @@ from KumsalTR import app, anon, boot, config, lang
 from KumsalTR.helpers import buttons
 
 
-@app.on_message(filters.command(["alive", "ping"]) & ~app.bl_users)
+@app.on_message(filters.command(["alive", "ping"]) & ~app.blacklist_filter)
 @lang.language()
 async def _ping(_, m: types.Message):
     start = time.time()

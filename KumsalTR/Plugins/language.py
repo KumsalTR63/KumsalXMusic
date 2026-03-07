@@ -10,7 +10,7 @@ from KumsalTR import app, db, lang
 from KumsalTR.helpers import admin_check, buttons
 
 
-@app.on_message(filters.command(["lang", "language"]) & ~app.bl_users)
+@app.on_message(filters.command(["lang", "language"]) & ~app.blacklist_filter)
 @lang.language()
 async def _lang(_, m: types.Message):
     current = await db.get_lang(m.chat.id)
@@ -18,7 +18,7 @@ async def _lang(_, m: types.Message):
     await m.reply_text(m.lang["lang_choose"], reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex(r"^lang(?:_change|uage)") & ~app.bl_users)
+@app.on_callback_query(filters.regex(r"^lang(?:_change|uage)") & ~app.blacklist_filter)
 @lang.language()
 @admin_check
 async def _lang_cb(_, query: types.CallbackQuery):
