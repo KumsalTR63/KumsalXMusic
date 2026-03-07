@@ -7,6 +7,7 @@ import time
 import logging
 from logging.handlers import RotatingFileHandler
 
+# LOGGER AYARLARI
 logging.basicConfig(
     format="[%(asctime)s - %(levelname)s] - %(name)s: %(message)s",
     datefmt="%d-%b-%y %H:%M:%S",
@@ -16,12 +17,15 @@ logging.basicConfig(
     ],
     level=logging.INFO,
 )
+
 logging.getLogger("httpx").setLevel(logging.ERROR)
 logging.getLogger("ntgcalls").setLevel(logging.CRITICAL)
 logging.getLogger("pymongo").setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
-logger = logging.getLogger(name)
+
+# HATA BURADAYDI
+logger = logging.getLogger(__name__)
 
 version = "3.0.1"
 
@@ -30,10 +34,8 @@ from config import Config
 config = Config()
 config.check()
 
-# --- HATA DÜZELTME BURADA ---
-# Plugins içindeki (chetagger.py gibi) dosyaların LOGGER_ID'yi bulabilmesi için:
+# Plugins içindeki dosyaların LOGGER_ID kullanabilmesi için
 LOGGER_ID = config.LOGGER_ID
-# ----------------------------
 
 tasks = []
 boot = time.time()
@@ -55,6 +57,7 @@ lang = Language()
 
 from KumsalTR.core.telegram import Telegram
 from KumsalTR.core.youtube import YouTube
+
 tg = Telegram()
 yt = YouTube()
 
@@ -66,7 +69,8 @@ anon = TgCall()
 
 
 async def stop() -> None:
-    logger.info("Stopping...")
+    logger.info("Bot durduruluyor...")
+
     for task in tasks:
         task.cancel()
         try:
@@ -78,4 +82,4 @@ async def stop() -> None:
     await userbot.exit()
     await db.close()
 
-    logger.info("Stopped.\n")
+    logger.info("Bot başarıyla durduruldu.\n")
