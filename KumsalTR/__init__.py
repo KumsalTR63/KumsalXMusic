@@ -36,6 +36,7 @@ config.check()
 
 # Plugins içindeki dosyaların LOGGER_ID kullanabilmesi için
 LOGGER_ID = config.LOGGER_ID
+OWNER_ID = config.OWNER_ID
 
 tasks = []
 boot = time.time()
