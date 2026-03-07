@@ -44,7 +44,7 @@ class Inline:
             )
             keyboard.append(
                 [
-                    self.ikb(text="˹ 𝐃єѕᴛєᴋ ˼", url="https://t.me/kumsalbots"),
+                    self.ikb(text="˹ 𝐃єѕᴛєᴋ ˼", url="https://t.me/The_Team_Kumsal"),
                     self.ikb(text="⌯ 𝐊ᴀᴘᴀᴛ ⌯", callback_data="help close")
                 ]
             )
@@ -62,10 +62,10 @@ class Inline:
             ]
         else:
             cbs = [
-                "admins", "auth", "blist",
-                "lang", "ping", "play",
-                "queue", "stats", "sudo",
-                "etiket", "eglence"
+                "ʏᴏɴᴇᴛɪᴄɪ", "ʏᴇᴛᴋɪʟɪ", "ʙ-ʟɪsᴛ",
+                "ᴅɪʟ", "ᴘɪɴɢ", "ᴏʏɴᴀᴛ",
+                "ᴋᴜʏʀᴜᴋ", "sᴛᴀᴛs", "sᴜᴅᴏ",
+                "ᴇᴛɪᴋᴇᴛ", "ᴇɢʟᴇɴᴄᴇ"
             ]
 
             buttons = []
@@ -100,7 +100,7 @@ class Inline:
             [
                 [
                     self.ikb(
-                        text="⚡ 𝐒̧ɪᴍᴅɪ 𝐏ᴀᴛʟᴀᴛ",
+                        text="⚡ sɪᴍᴅɪ ᴄᴀʟ",
                         callback_data=f"controls force {chat_id} {item_id}"
                     )
                 ]
@@ -143,13 +143,13 @@ class Inline:
         rows = [
             [
                 self.ikb(
-                    text="✙ 𝐁єηі 𝐆ʀσυвυηα 𝐄ᴋʟє ✙",
+                    text="✙ ʙᴇɴɪ ɢʀᴜʙᴜɴᴀ ᴇᴋʟᴇ ✙",
                     url=f"https://t.me/{app.username}?startgroup=true",
                 ),
-                self.ikb(text="˹ 𝐘ᴀʀᴅıᴍ ˼", callback_data="help"),
+                self.ikb(text="˹ ʏᴀʀᴅɪᴍ ᴋᴏᴍᴜᴛʟᴀʀ ˼", callback_data="help"),
             ],
             [
-                self.ikb(text="˹ 𝐃єѕᴛєᴋ ˼", url=config.SUPPORT_CHAT),
+                self.ikb(text="˹ ᴅᴇsᴛᴇᴋ ˼", url=config.SUPPORT_CHAT),
                 self.ikb(text="˹ 𝐆ϋηᴄєʟʟєᴍєʟєʀ ˼", url=config.SUPPORT_CHANNEL),
             ],
         ]
@@ -157,9 +157,9 @@ class Inline:
         if private:
             rows.append(
                 [
-                    self.ikb(text="˹ 𝐒ᴀʜіʙі ˼", user_id=config.OWNER_ID),
+                    self.ikb(text="sᴀʜɪᴘ ˼", user_id=config.OWNER_ID),
                     self.ikb(
-                        text="˹ 𝐊ᴀηᴀʟ ˼",
+                        text="˹ ᴋᴀʏɴᴀᴋ ᴋᴏᴅ ˼",
                         url="https://t.me/kaygisizlarsohbet",
                     ),
                 ]
