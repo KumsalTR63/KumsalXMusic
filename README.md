@@ -3,7 +3,7 @@
 </h2>
 
 <p align="center">
-  <img src="https://files.catbox.moe/4qasc4.jpeg" width="700">
+<img src="https://resmim.net/cdn/2026/03/07/wvHiSZ.jpg" width="700">
 </p>
 
 <p align="center">
@@ -20,16 +20,16 @@
     ─「 ⭐ ÖZELLİKLER 」─
 </h3>
 
-- 🎵 **Yüksek Kalite Müzik Yayını**
-- 📺 **Video Müzik Oynatma**
-- 🔎 **YouTube Arama**
-- 📑 **Akıllı Müzik Kuyruğu**
-- ⏸ **Duraklat / Devam**
-- ⏭ **Şarkı Atlama**
-- 🎧 **7/24 Çalışma**
-- ⚡ **Hızlı ve Stabil**
-- 🛠 **Admin Kontrol Sistemi**
-- 🌐 **Çoklu Dil Desteği**
+- 🎵 Yüksek kalite müzik yayını  
+- 📺 Video müzik oynatma  
+- 🔎 YouTube arama  
+- 📑 Akıllı müzik kuyruğu  
+- ⏸ Duraklat / Devam  
+- ⏭ Şarkı atlama  
+- 🎧 7/24 çalışma  
+- ⚡ Hızlı ve stabil  
+- 🛠 Admin kontrol sistemi  
+- 🌐 Çoklu dil desteği  
 
 ---
 
