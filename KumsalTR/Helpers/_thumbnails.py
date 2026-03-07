@@ -4,6 +4,7 @@
 # This file is part of KumsalTR
 
 import os
+from pathlib import Path
 import aiohttp
 from PIL import (Image, ImageDraw, ImageEnhance,
                  ImageFilter, ImageFont, ImageOps)
@@ -18,9 +19,10 @@ class Thumbnail:
         self.fill = (255, 255, 255)
         self.mask = Image.new("L", self.rect, 0)
         # Font yolları ve boyutları
-        self.font1 = ImageFont.truetype("KumsalTR/helpers/Raleway-Bold.ttf", 30)
-        self.font2 = ImageFont.truetype("KumsalTR/helpers/Inter-Light.ttf", 30)
-        self.font3 = ImageFont.truetype("KumsalTR/helpers/Raleway-Bold.ttf", 25) # Federasyon yazısı için
+        font_dir = Path(__file__).resolve().parent
+        self.font1 = ImageFont.truetype(str(font_dir / "Raleway-Bold.ttf"), 30)
+        self.font2 = ImageFont.truetype(str(font_dir / "Inter-Light.ttf"), 30)
+        self.font3 = ImageFont.truetype(str(font_dir / "Raleway-Bold.ttf"), 25)
 
     async def save_thumb(self, output_path: str, url: str) -> str:
         async with aiohttp.ClientSession() as session:
